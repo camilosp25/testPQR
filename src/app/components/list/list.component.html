@@ -1,7 +1,7 @@
 <ul class="list-group">
   <li class="list-group-item">
     <div class="input-group mb-3">
-      <input type="text" class="form-control" (keyup.enter)="search(textSearch.value)" #textSearch>
+      <input type="text" class="form-control" (input)="search(textSearch.value)" #textSearch>
       <span class="input-group-text"><button type="button" (click)="search(textSearch.value)"
                                              class="btn btn-outline-dark"><fa-icon [icon]="faSearch"></fa-icon></button></span>
     </div>
