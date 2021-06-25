@@ -1,0 +1,27 @@
+<div class="login-container container">
+  <div class="row justify-content-center align-middle">
+    <div class="col-md-auto">
+      <form autocomplete="off" (ngSubmit)="onSubmit(form)" [formGroup]="form">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email">
+          <span class="help-block" *ngIf="validateField('email')">
+            <small class="form-text text-danger"
+                   *ngIf="validateField('email','pattern')">Formato incorrecto</small>
+            <small class="form-text text-danger"
+                   *ngIf="validateField('email','required')">Email obligatorio</small>
+          </span>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" formControlName="password">
+          <span class="help-block" *ngIf="validateField('password')">
+            <small class="form-text text-danger"
+                   *ngIf="validateField('password','required')">Password obligatorio</small>
+          </span>
+        </div>
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+      </form>
+    </div>
+  </div>
+</div>
