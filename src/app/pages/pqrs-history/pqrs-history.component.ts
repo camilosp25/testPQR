@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 // @ts-ignore
 import pqrs_data from '../../../assets/data/pqrs.json';
@@ -12,6 +12,7 @@ export class PqrsHistoryComponent implements OnInit {
 
   code: string | null;
   userId: number | null;
+  pqrs: any;
   history: any[] = [];
 
   constructor(private route: ActivatedRoute) {
@@ -24,9 +25,8 @@ export class PqrsHistoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.history = pqrs_data.filter((data: { userId: number | null; }) => data.userId == this.userId)[0].pqrs
-      .filter((data: { code: string | null; }) => data.code === this.code)[0].history;
-    console.log(this.history);
+    this.pqrs = pqrs_data.filter((data: { userId: number | null; }) => data.userId == this.userId)[0].pqrs
+    this.history = this.pqrs.filter((data: { code: string | null; }) => data.code === this.code)[0].history;
   }
 
 }

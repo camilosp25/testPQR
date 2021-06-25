@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {Routes} from '@angular/router';
 import {ExternalComponent} from "./layouts/external/external.component";
 import {AuthGuard} from "./auth.guard";
 import {InternalComponent} from "./layouts/internal/internal.component";
 
-const routes: Routes = [
+export const Approutes: Routes = [
   {
     path: '',
     component: InternalComponent,
@@ -29,9 +28,3 @@ const routes: Routes = [
     ]
   }
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }

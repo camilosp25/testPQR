@@ -1,1 +1,11 @@
-<p>pqrs-history works!</p>
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <ul class="timeline">
+          <app-item *ngFor="let item of history; let i = index" [item]="item" [index]="i"></app-item>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
